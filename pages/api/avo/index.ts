@@ -9,13 +9,13 @@ const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
 
     const db = new DB()
     const allEntries = await db.getAll()
-    //const length = allEntries.length
+    const length = allEntries.length
 
     res.statusCode = 200
     res.setHeader('Content-Type', 'application/json')
    // res.setHeader('Access-Control-Allow-Origin', '*')
     //res.setHeader('Access-Control-Allow-Methods', 'GET')
-    res.end(JSON.stringify({  data: allEntries }))
+    res.end(JSON.stringify({  data: allEntries, length }))
   } catch (e) {
     console.error(e)
     res.statusCode = 500
