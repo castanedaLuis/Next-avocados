@@ -1,5 +1,6 @@
 import React from 'react';
-import NavBar from '../navBar/index'
+//Path alias
+import NavBar from '@components/Navbar'
 
 function index({children}) {
   return (
