@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1250px;
+    margin: auto;
+}
+.home{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 25px;
+    align-items: center;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.containerCard{
+    background-color: red;
+    width: 333px;
+    height: 493px;
+}

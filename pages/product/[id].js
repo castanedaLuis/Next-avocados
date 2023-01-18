@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Card from '@components/card';
 
 export const getStaticPaths = async () => {
   const response = await fetch('https://platzi-avo.vercel.app/api/avo')
@@ -51,12 +52,23 @@ function ProductItem() {
   useEffect(() => {
     id && getProduct(id);
   }, [id]);
+
   return (
-    <>
-      <h1>Producto:</h1>
-      <div>{product?.name}</div>
-      <Image  src={product?.image} width={333} height={333}/>
-    </>
+    <div className="d-flex g-5 row">
+      <h1 className="text-center">Detalle del Avocate:</h1>
+      <div className="col-6 p-0 d-flex justify-content-center">
+        <Card {...product} />
+      </div>
+      <div className="col-6 p-0">
+        <h3>Descriptión</h3>
+        <p>{product?.attributes.description}</p>
+        <div>
+          <button>➖</button>
+          <button>Agregar al carrito</button>
+          <button>➕</button>
+        </div>
+      </div>
+    </div>
   )
 }
 

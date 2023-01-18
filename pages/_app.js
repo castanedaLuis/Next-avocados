@@ -1,4 +1,5 @@
 import Layout from '@components/Layout/index';
+import '../styleGlobales.css'
 
 
 export function reportWebVitals(metric) {

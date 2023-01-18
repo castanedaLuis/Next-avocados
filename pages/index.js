@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import Card from '@components/card';
 
 /*
     getServerSideProps  --> bajo demanda, cada request del usuario
@@ -9,13 +11,13 @@ import { useRouter } from "next/router";
 export const getStaticProps = async () => {
     const response = await fetch('https://platzi-avo.vercel.app/api/avo')
     const { data: productList } = await response.json()
-  
+
     return {
-      props: {
-        productList,
-      },
+        props: {
+            productList,
+        },
     }
-  }
+}
 
 function Home() {
     const [productList, setProductList] = useState([]);
@@ -32,20 +34,29 @@ function Home() {
     };
 
     useEffect(() => {
-         getProducts();
-    },[]);
+        getProducts();
+    }, []);
     return (
         <>
+            <main className="main">
+                <h1 className="titulo">App avocados 🥑</h1>
+                <div className="home">
+                    {
+                        productList.length > 0 &&
+                        productList.map(item => {
+                            return (
+                                <div>
+                                    <Card {...item} />
+                                    <Link href={`/avocado/${item.id}`}>
+                                        <button>Ver deatlles</button>
+                                    </Link>
+                                </div>
+                            )
+                        })
+                    }
 
-            <h1>Home</h1>
-            {
-                productList.length > 0 &&
-                productList.map(item => {
-                    return(
-                        <div key={item.name}>{`${item.name}`}</div>
-                    )
-                })
-            }
+                </div>
+            </main>
         </>
     )
 }
