@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import NavBar from '../components/navBar'
 
 
 function Home() {
@@ -22,7 +21,7 @@ function Home() {
     },[]);
     return (
         <>
-            <NavBar />
+
             <h1>Home</h1>
             {
                 productList.length > 0 &&
