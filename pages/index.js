@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 /*
-    getServerSideProps
-    getStaticProps
+    getServerSideProps  --> bajo demanda, cada request del usuario
+    getStaticProps  --> solo sucede una unica vez cuando hacemos npm Build
+    getStaticPaths --> 
 */
 export const getStaticProps = async () => {
     const response = await fetch('https://platzi-avo.vercel.app/api/avo')

@@ -1,6 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { GetStaticPaths, GetStaticProps } from 'next';
 import NavBar from '../../components/navBar'
+
+export const GetStaticPaths = async () => {
+  const response = await fetch('https://platzi-avo.vercel.app/api/avo')
+  const { data } = await response.json()
+
+  const paths = data.map(({ id }) => ({ params: { id } }))
+
+  return {
+    // Statically generate all paths
+    paths,
+    // Display 404 for everything else
+    fallback: false,
+  }
+}
+
+// This also gets called at build time
+export const GetStaticProps = async ({ params }) => {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  const response = await fetch(
+    `https://platzi-avo.vercel.app/api/avo/${params?.id}`
+  )
+  const product = await response.json()
+
+  // Pass post data to the page via props
+  return { props: { product } }
+}
 
 function ProductItem() {
   //const router = useRouter();
