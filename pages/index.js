@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import NavBar from '../components/navBar'
 
 
-function Home (){
-    return(
+function Home() {
+    const [productList, setProductList] = useState([]);
+
+    const getProducts = async () => {
+        try {
+            const res = await fetch(`/api/avo/`);
+            const data = await res.json();
+            console.log(data.data);
+            setProductList(data.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+         getProducts();
+    },[]);
+    return (
         <>
             <NavBar />
             <h1>Home</h1>
-
+            {
+                productList.length > 0 &&
+                productList.map(item => {
+                    return(
+                        <div key={item.name}>{`${item.name}`}</div>
+                    )
+                })
+            }
         </>
     )
 }
