@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
   const response = await fetch('https://platzi-avo.vercel.app/api/avo')
@@ -35,6 +36,7 @@ function ProductItem() {
   const {
     query: { id },
   } = useRouter();
+
   const getProduct = async (id) => {
     try {
       const res = await fetch(`/api/avo/${id}`);
@@ -53,6 +55,7 @@ function ProductItem() {
     <>
       <h1>Producto:</h1>
       <div>{product?.name}</div>
+      <Image  src={product?.image} width={333} height={333}/>
     </>
   )
 }
