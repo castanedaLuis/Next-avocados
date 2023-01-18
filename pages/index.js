@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
+/*
+    getServerSideProps
+    getStaticProps
+*/
+export const getStaticProps = async () => {
+    const response = await fetch('https://platzi-avo.vercel.app/api/avo')
+    const { data: productList } = await response.json()
+  
+    return {
+      props: {
+        productList,
+      },
+    }
+  }
 
 function Home() {
     const [productList, setProductList] = useState([]);
