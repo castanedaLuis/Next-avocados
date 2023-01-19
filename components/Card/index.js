@@ -5,7 +5,7 @@ function index({name, image, price}) {
   return (
     <>
         <div className='containerCard'>
-            <Image src={image} width={333} height={333}/>
+            <Image src={image} width={333} height={333} alt={name}/>
             <h1>{name}</h1>
             <h4>Precio:${price}</h4>
         </div>

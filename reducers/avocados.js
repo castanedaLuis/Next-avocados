@@ -1,14 +1,12 @@
 import { SET_AVOCADOS, SET_FAVORITE } from '../actions/types';
 
-const initialState = ({
-    avocados: [],
-  });
 
 
-  export const avocadosReducer = (state = initialState, action) => {
+  export const avocadosReducer = (state, action) => {
+    console.log('state',state);
     switch (action.type) {
       case SET_AVOCADOS:
-        return { ...state, avocados: action.payload };
+        return { ...state,avocados: [...state.avocados,action.payload] };
         
       case SET_FAVORITE:
         const currentPokemonIndex = state.get('pokemons').findIndex((pokemon) => {

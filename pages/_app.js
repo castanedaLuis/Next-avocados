@@ -1,12 +1,12 @@
 import Layout from '@components/Layout/index';
-import { pokemonsReducer } from '../reducers/avocados';
+import { avocadosReducer } from '../reducers/avocados';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
 import '../styleGlobales.css';
 
 
 export function reportWebVitals(metric) {
-  console.log(metric)
+  //console.log(metric)
   // analytics - calibre
   // serverAnulicts.log(metric)
 }
@@ -15,7 +15,12 @@ const MyApp = ({ Component, pageProps }) => {
   // Aditional props
   // Aditional layout
   // Manejar errores - componentDidCatch
-  const store = createStore(pokemonsReducer, ['Use Redux']);
+  const initialState = ({
+    favorites:[],
+    avocados: [],
+  });
+  const store = createStore(avocadosReducer, initialState);
+
   return (
     <Provider store={store}>
       <Layout>

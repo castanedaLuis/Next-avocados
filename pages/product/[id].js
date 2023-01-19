@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { setAvocados } from '../../actions';
+import { useDispatch, useSelector } from 'react-redux';
 import Image from "next/image";
 import Card from '@components/card';
 
@@ -31,18 +33,25 @@ export const getStaticProps = async ({ params }) => {
 }
 
 function ProductItem() {
+
+  const data = useSelector(state =>{
+    console.log(state);
+  })
+  const dispatch = useDispatch();
   //const router = useRouter();
   const [product, setProduct] = useState();
 
-  const {
-    query: { id },
-  } = useRouter();
+  const handleOnCarrito = () => {
+    dispatch(setAvocados( product ));
+  };
+
+  const {query: { id }} = useRouter();
 
   const getProduct = async (id) => {
     try {
       const res = await fetch(`/api/avo/${id}`);
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       setProduct(data);
     } catch (error) {
       console.error(error);
@@ -53,6 +62,7 @@ function ProductItem() {
     id && getProduct(id);
   }, [id]);
 
+  
   return (
     <div className="d-flex g-5 row m-0">
       <h1 className="text-center">Detalle del Avocado:</h1>
@@ -64,7 +74,7 @@ function ProductItem() {
         <p className="detailAvocado">{product?.attributes.description}</p>
         <div className="contenedorBotones">
           <button>➖</button>
-          <button className="btnCentral">Agregar al carrito</button>
+          <button className={`btnCentral ${''}`} onClick={handleOnCarrito}>Agregar al carrito</button>
           <button>➕</button>
         </div>
       </div>
