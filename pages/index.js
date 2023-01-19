@@ -45,10 +45,10 @@ function Home() {
                         productList.length > 0 &&
                         productList.map(item => {
                             return (
-                                <div>
+                                <div className="contenedorCardHome">
                                     <Card {...item} />
                                     <Link href={`/avocado/${item.id}`}>
-                                        <button>Ver deatlles</button>
+                                        <button className="BtnVerDetalles">Ver detalles</button>
                                     </Link>
                                 </div>
                             )

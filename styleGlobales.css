@@ -1,3 +1,4 @@
+
 .main{
     display: flex;
     flex-direction: column;
@@ -8,9 +9,23 @@
 }
 .home{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(375px,1fr));
     gap: 25px;
     align-items: center;
+}
+
+.contenedorCardHome{
+    position: relative;
+}
+.BtnVerDetalles{
+    position: absolute;
+    bottom: -15px;
+    left: 22%;
+    border-radius: 9px;
+    height: 40px;
+    padding: 0 40px;
+    background-color: rgb(224, 252, 239);
+    border: none;
 }
 
 .titulo{
@@ -19,7 +34,70 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .containerCard{
-    background-color: red;
+    background-color: rgb(191, 230, 196);
     width: 333px;
     height: 493px;
+    border-radius: 25px;
+}
+.containerCard h1{
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 40px;
+}
+.containerCard h4{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+.navMain{
+    width: 100%;
+    height: 80px;
+    background: radial-gradient(circle at 0% 0%, rgb(0, 67, 122) 0%, rgb(0, 30, 80) 100%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.linkNav{
+    transition: .3s;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a:hover > :not(:hover){
+    opacity: .4;
+}
+
+.apanCarrito{
+    color: white;
+    cursor: pointer;
+}
+
+.TitledetailAvocado{
+    font-size: 24px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.detailAvocado{
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedorBotones{
+    margin-top: 40px;
+}
+
+.contenedorBotones button{
+    padding: 20px 20px;
+    background-color: transparent;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.contenedorBotones button:hover{
+    background-color: rgb(191, 230, 196);
 }

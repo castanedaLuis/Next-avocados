@@ -54,17 +54,17 @@ function ProductItem() {
   }, [id]);
 
   return (
-    <div className="d-flex g-5 row">
-      <h1 className="text-center">Detalle del Avocate:</h1>
-      <div className="col-6 p-0 d-flex justify-content-center">
+    <div className="d-flex g-5 row m-0">
+      <h1 className="text-center">Detalle del Avocado:</h1>
+      <div className="col-xl-6 col-sm-12 p-0 d-flex justify-content-center">
         <Card {...product} />
       </div>
-      <div className="col-6 p-0">
-        <h3>Descriptión</h3>
-        <p>{product?.attributes.description}</p>
-        <div>
+      <div className="col-xl-6  col-sm-12 p-0">
+        <h3 className="TitledetailAvocado">Descriptión</h3>
+        <p className="detailAvocado">{product?.attributes.description}</p>
+        <div className="contenedorBotones">
           <button>➖</button>
-          <button>Agregar al carrito</button>
+          <button className="btnCentral">Agregar al carrito</button>
           <button>➕</button>
         </div>
       </div>

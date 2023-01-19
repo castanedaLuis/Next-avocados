@@ -1,8 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
-function index({name, image, price, id}) {
+function index({name, image, price}) {
   return (
     <>
         <div className='containerCard'>
