@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setAvocados } from '../../actions';
+import { setAvocados,deleteAvocados } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from "next/image";
 import Card from '@components/card';
@@ -47,6 +47,9 @@ function ProductItem() {
   const handleOnCarrito = () => {
     dispatch(setAvocados(product));
   };
+  // const handleOnDelete = (producto) => {
+  //   dispatch(deleteAvocados(producto));
+  // };
 
   const { query: { id } } = useRouter();
 
@@ -96,7 +99,7 @@ function ProductItem() {
                     <div className="itemCrrito" key={item.name+index}>
                       <h5 className="m-0 p-0">{item.name}</h5>
                       <p className="m-0 p-0">${item.price}</p>
-                      <button className="btnEliminar">➖</button>
+                      <button className="btnEliminar" >➖</button>
                     </div>
                   )
                 })

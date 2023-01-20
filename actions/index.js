@@ -1,8 +1,13 @@
-import { SET_FAVORITE, SET_LOADING, SET_AVOCADOS, GET_AVOCADOS } from './types';
+import { SET_FAVORITE, SET_LOADING, SET_AVOCADOS, GET_AVOCADOS, DELETE_AVOCADOS } from './types';
 
 
 export const setAvocados = (payload) => ({
     type: SET_AVOCADOS,
+    payload,
+  });
+
+  export const deleteAvocados = (payload) => ({
+    type: DELETE_AVOCADOS,
     payload,
   });
 

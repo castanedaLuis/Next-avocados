@@ -11,7 +11,7 @@ function index() {
     
       useEffect(()=>{
         setProductCarrito(data.avocados.length)
-        console.log('nav store',data.avocados.length);
+        //console.log('nav store',data.avocados.length);
       },[data])
     return (
         <>
