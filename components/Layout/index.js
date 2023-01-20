@@ -1,14 +1,14 @@
 import React from 'react';
 //Path alias
-// import NavBar from '../NavBar'
-// import Footer from '../Footer'
+import NavBar from '../NavBar'
+import Footer from '../Footer'
 
 function index({children}) {
   return (
     <>
-        {/* <NavBar /> */}
+        <NavBar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }
