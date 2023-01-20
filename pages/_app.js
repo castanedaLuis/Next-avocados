@@ -1,4 +1,4 @@
-import Layout from '@components/Layout/index';
+import Layout from '../components/Layout/index';
 import { avocadosReducer } from '../reducers/avocados';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
