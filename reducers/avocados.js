@@ -3,7 +3,7 @@ import { SET_AVOCADOS, SET_FAVORITE } from '../actions/types';
 
 
   export const avocadosReducer = (state, action) => {
-    console.log('state',state);
+    //console.log('state',state);
     switch (action.type) {
       case SET_AVOCADOS:
         return { ...state,avocados: [...state.avocados,action.payload] };

@@ -19,23 +19,23 @@ export const getStaticProps = async () => {
     }
 }
 
-function Home() {
-    const [productList, setProductList] = useState([]);
+function Home({productList}) {
+    //const [productList, setProductList] = useState([]);
 
-    const getProducts = async () => {
-        try {
-            const res = await fetch(`/api/avo/`);
-            const data = await res.json();
-            console.log(data.data);
-            setProductList(data.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    // const getProducts = async () => {
+    //     try {
+    //         const res = await fetch(`/api/avo/`);
+    //         const data = await res.json();
+    //         console.log(data.data);
+    //         setProductList(data.data);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
 
-    useEffect(() => {
-        getProducts();
-    }, []);
+    // useEffect(() => {
+    //     getProducts();
+    // }, []);
     return (
         <>
             <main className="main">
@@ -45,7 +45,8 @@ function Home() {
                         productList.length > 0 &&
                         productList.map(item => {
                             return (
-                                <div className="contenedorCardHome">
+                    
+                                <div className="contenedorCardHome" key={item.id}>
                                     <Card {...item} />
                                     <Link href={`/avocado/${item.id}`}>
                                         <button className="BtnVerDetalles">Ver detalles</button>

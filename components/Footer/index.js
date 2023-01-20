@@ -5,16 +5,16 @@ import { Footer, Ul, Arcon } from './styles'
 function index() {
   return (
     <>
-        <Footer>
+        <footer className='footer'>
             <div>
-                <Ul>
+                <ul className='ulFooter'>
                     <li>Github</li>
                     <Link href={'https://github.com/castanedaLuis'} legacyBehavior>
-                        <Arcon>Repositorios</Arcon>
+                        <a>Repositorios</a>
                     </Link>
-                </Ul>
+                </ul>
             </div>
-        </Footer>
+        </footer>
 
     </>
   )

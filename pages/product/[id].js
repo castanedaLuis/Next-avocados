@@ -34,7 +34,7 @@ export const getStaticProps = async ({ params }) => {
 
 function ProductItem() {
 
-  const data = useSelector(state =>{
+  const data = useSelector(state => {
     console.log(state);
   })
   const dispatch = useDispatch();
@@ -42,10 +42,10 @@ function ProductItem() {
   const [product, setProduct] = useState();
 
   const handleOnCarrito = () => {
-    dispatch(setAvocados( product ));
+    dispatch(setAvocados(product));
   };
 
-  const {query: { id }} = useRouter();
+  const { query: { id } } = useRouter();
 
   const getProduct = async (id) => {
     try {
@@ -59,25 +59,31 @@ function ProductItem() {
   };
 
   useEffect(() => {
-    id && getProduct(id);
+    getProduct(id);
   }, [id]);
 
-  
+
   return (
+
     <div className="d-flex g-5 row m-0">
       <h1 className="text-center">Detalle del Avocado:</h1>
-      <div className="col-xl-6 col-sm-12 p-0 d-flex justify-content-center">
-        <Card {...product} />
-      </div>
-      <div className="col-xl-6  col-sm-12 p-0">
-        <h3 className="TitledetailAvocado">Descriptión</h3>
-        <p className="detailAvocado">{product?.attributes.description}</p>
-        <div className="contenedorBotones">
-          <button>➖</button>
-          <button className={`btnCentral ${''}`} onClick={handleOnCarrito}>Agregar al carrito</button>
-          <button>➕</button>
-        </div>
-      </div>
+      {
+        product !== undefined &&
+        <>
+          <div className="col-xl-6 col-sm-12 p-0 d-flex justify-content-center">
+            <Card {...product} />
+          </div>
+          <div className="col-xl-6  col-sm-12 p-0">
+            <h3 className="TitledetailAvocado">Descriptión</h3>
+            <p className="detailAvocado">{product?.attributes.description}</p>
+            <div className="contenedorBotones">
+              <button>➖</button>
+              <button className={`btnCentral ${''}`} onClick={handleOnCarrito}>Agregar al carrito</button>
+              <button>➕</button>
+            </div>
+          </div>
+        </>
+      }
     </div>
   )
 }

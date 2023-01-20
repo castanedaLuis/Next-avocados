@@ -1,7 +1,18 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
 
 function index() {
+    const [productCarrito, setProductCarrito] = useState(0)
+
+    const data = useSelector(state =>{
+            return state
+      })
+    
+      useEffect(()=>{
+        setProductCarrito(data.avocados.length)
+        console.log('nav store',data.avocados.length);
+      },[data])
     return (
         <>
             <nav className='navMain'>
@@ -15,7 +26,7 @@ function index() {
 
                 <Link href={'/carrito'} legacyBehavior>
                     <div>
-                        <span className='apanCarrito'>Carrito (2) 🛒</span>
+                        <span className='apanCarrito'>{`Carrito ${productCarrito}`} 🛒</span>
                     </div>
                 </Link>
 
