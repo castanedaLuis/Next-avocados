@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@database": ["database/db.ts"],
+      "@database": ["database/db.js"],
       "@cors": ["cors-middleware.ts"],
       "@components/*": ["components/*"],
       "@store/*": ["store/*"]
@@ -33,5 +33,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/index.js"  ]
+, "pages/index.js", "database/data.js", "database/db.js"  ]
 }
