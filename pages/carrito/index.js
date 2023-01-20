@@ -1,5 +1,5 @@
 import React from 'react'
-import Carrito from '@components/Carrito/Carrito.js'
+import Carrito from '../../components/Carrito/Carrito'
 
 function index() {
   return (
