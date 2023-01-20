@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Card from '@components/card';
+import Card from '../components/Card';
 
 /*
     getServerSideProps  --> bajo demanda, cada request del usuario

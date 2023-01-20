@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { setAvocados,deleteAvocados } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from "next/image";
-import Card from '../../components/card/index';
+import Card from '../../components/Card';
 
 export const getStaticPaths = async () => {
   const response = await fetch('https://platzi-avo.vercel.app/api/avo')

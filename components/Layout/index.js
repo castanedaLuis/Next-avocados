@@ -1,7 +1,7 @@
 import React from 'react';
 //Path alias
-import NavBar from '../NavBar/index'
-import Footer from '../Footer/index'
+import NavBar from '../NavBar'
+import Footer from '../Footer'
 
 function index({children}) {
   return (
