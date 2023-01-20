@@ -125,3 +125,36 @@ a:hover > :not(:hover){
     text-decoration: none;
     cursor: pointer;
 }
+
+.carrito{
+    border-radius: 24px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.titleCarrito{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.itemCrrito{
+    background-color: rgb(191, 230, 196);
+    width: 80%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 20px;
+}
+.itemCrrito h5, p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btnEliminar{
+    background: transparent;
+    border: none;
+    text-align: center;
+}

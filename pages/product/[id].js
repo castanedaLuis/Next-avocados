@@ -35,11 +35,14 @@ export const getStaticProps = async ({ params }) => {
 function ProductItem() {
 
   const data = useSelector(state => {
-    console.log(state);
+    //console.log(state);
+    return state
   })
   const dispatch = useDispatch();
   //const router = useRouter();
   const [product, setProduct] = useState();
+  const [catidadItemsCarrito, setItemCarrito] = useState(0);
+  const [productCarrito, setProductCarrito] = useState([]);
 
   const handleOnCarrito = () => {
     dispatch(setAvocados(product));
@@ -60,7 +63,10 @@ function ProductItem() {
 
   useEffect(() => {
     getProduct(id);
-  }, [id]);
+    setItemCarrito(data.avocados.length);
+    setProductCarrito(data.avocados);
+    console.log('productos agregados:', productCarrito);
+  }, [data, id]);
 
 
   return (
@@ -70,18 +76,34 @@ function ProductItem() {
       {
         product !== undefined &&
         <>
-          <div className="col-xl-6 col-sm-12 p-0 d-flex justify-content-center">
+          <div className="col-xl-4 col-sm-12 p-0 d-flex justify-content-center">
             <Card {...product} />
           </div>
-          <div className="col-xl-6  col-sm-12 p-0">
+          <div className="col-xl-4  col-sm-12 p-0">
             <h3 className="TitledetailAvocado">Descriptión</h3>
             <p className="detailAvocado">{product?.attributes.description}</p>
             <div className="contenedorBotones">
-              <button>➖</button>
               <button className={`btnCentral ${''}`} onClick={handleOnCarrito}>Agregar al carrito</button>
-              <button>➕</button>
             </div>
           </div>
+          {
+            productCarrito.length > 0 &&
+            <>
+              <div className="col-xl-4 col-sm-12 carrito">
+                <h3 className="titleCarrito">{`Tu carrito ${catidadItemsCarrito ? `tiene ${catidadItemsCarrito} avocados` : 'esta vacío'}`}</h3>
+                {productCarrito.map((item, index) => {
+                  return (
+                    <div className="itemCrrito" key={item.name+index}>
+                      <h5 className="m-0 p-0">{item.name}</h5>
+                      <p className="m-0 p-0">${item.price}</p>
+                      <button className="btnEliminar">➖</button>
+                    </div>
+                  )
+                })
+                }
+              </div>
+            </>
+          }
         </>
       }
     </div>

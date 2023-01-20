@@ -1,4 +1,4 @@
-import { SET_AVOCADOS, SET_FAVORITE } from '../actions/types';
+import { SET_AVOCADOS, SET_FAVORITE, GET_AVOCADOS } from '../actions/types';
 
 
 
@@ -7,7 +7,11 @@ import { SET_AVOCADOS, SET_FAVORITE } from '../actions/types';
     switch (action.type) {
       case SET_AVOCADOS:
         return { ...state,avocados: [...state.avocados,action.payload] };
-        
+
+      case GET_AVOCADOS:
+        return {
+          ...state
+        }
       case SET_FAVORITE:
         const currentPokemonIndex = state.get('pokemons').findIndex((pokemon) => {
           return pokemon.get('id') === action.payload.pokemonId;

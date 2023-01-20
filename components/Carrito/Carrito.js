@@ -9,7 +9,7 @@ function Carrito() {
       })
       useEffect(()=>{
         setProductCarrito(data.avocados)
-        console.log('carrito store',data.avocados);
+        //console.log('carrito store',data.avocados);
       },[data])
 
   return (
@@ -20,6 +20,7 @@ function Carrito() {
                 <div>
                     <h1>{productCarrito.name}</h1>
                     <p>{productCarrito.price}</p>
+                    <button>Eliminar</button>
                 </div>
             </>
         }

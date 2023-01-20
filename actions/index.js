@@ -1,4 +1,4 @@
-import { SET_FAVORITE, SET_LOADING, SET_AVOCADOS } from './types';
+import { SET_FAVORITE, SET_LOADING, SET_AVOCADOS, GET_AVOCADOS } from './types';
 
 
 export const setAvocados = (payload) => ({
@@ -13,5 +13,10 @@ export const setAvocados = (payload) => ({
   
   export const setFavorite = (payload) => ({
     type: SET_FAVORITE,
+    payload,
+  });
+
+  export const getAvocados = (payload) => ({
+    type: GET_AVOCADOS,
     payload,
   });
