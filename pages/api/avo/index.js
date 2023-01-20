@@ -1,10 +1,10 @@
 
 
 import { IncomingMessage, ServerResponse } from 'http'
-import DB from '@database'
+import DB from '../../../database/db'
 
 
-const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
+const allAvos = async (req, res) => {
   try {
 
     const db = new DB()
