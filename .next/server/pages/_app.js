@@ -23,7 +23,7 @@ const GET_AVOCADOS = "GET_AVOCADOS";
 
 /***/ }),
 
-/***/ 4308:
+/***/ 4019:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45,7 +45,7 @@ var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react-redux"
 var external_react_redux_ = __webpack_require__(6022);
-;// CONCATENATED MODULE: ./components/Navbar/index.js
+;// CONCATENATED MODULE: ./components/NavBar/index.js
 
 
 
@@ -98,7 +98,7 @@ function index() {
         })
     });
 }
-/* harmony default export */ const Navbar = (index);
+/* harmony default export */ const NavBar = (index);
 
 ;// CONCATENATED MODULE: external "styled-components"
 const external_styled_components_namespaceObject = require("styled-components");
@@ -165,7 +165,7 @@ function Footer_index() {
 function Layout_index({ children  }) {
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(Navbar, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(NavBar, {}),
             children,
             /*#__PURE__*/ jsx_runtime_.jsx(components_Footer, {})
         ]
@@ -493,7 +493,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664], () => (__webpack_exec__(4308)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664], () => (__webpack_exec__(4019)));
 module.exports = __webpack_exports__;
 
 })();

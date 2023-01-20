@@ -1,11 +1,11 @@
 {
   "/_error": "pages/_error.js",
-  "/_app": "pages/_app.js",
   "/about": "pages/about.html",
-  "/api/avo": "pages/api/avo.js",
-  "/carrito": "pages/carrito.html",
-  "/api/avo/[id]": "pages/api/avo/[id].js",
+  "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
+  "/api/avo": "pages/api/avo.js",
+  "/api/avo/[id]": "pages/api/avo/[id].js",
+  "/carrito": "pages/carrito.html",
   "/product/[id]": "pages/product/[id].js",
   "/": "pages/index.js",
   "/404": "pages/404.html"
